@@ -1,0 +1,157 @@
+/* ===================================
+   My Story Section
+   =================================== */
+
+.mystory-section {
+  background: #ffffff;
+  padding: 5rem 0;
+  position: relative;
+}
+
+/* --- Grid Layout --- */
+
+.mystory-grid {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- Image Column --- */
+
+.mystory-image {
+  flex: 0 0 45%;
+  position: relative;
+}
+
+.mystory-image::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 10%;
+  height: 80%;
+  width: 4px;
+  background: #CA0058;
+  border-radius: 2px;
+}
+
+.mystory-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+}
+
+/* --- Content Column --- */
+
+.mystory-content {
+  flex: 1;
+}
+
+.mystory-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.mystory-paragraph {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #666666;
+  margin-bottom: 1rem;
+}
+
+.mystory-paragraph:last-of-type {
+  margin-bottom: 1.5rem;
+}
+
+/* --- Read More Button --- */
+
+.mystory-btn {
+  margin-top: 0.5rem;
+}
+
+/* --- Rainbow Gradient Bar --- */
+
+.rainbow-bar {
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    red,
+    orange,
+    yellow,
+    green,
+    blue,
+    indigo,
+    violet
+  );
+  margin-top: 3rem;
+}
+
+/* --- Scroll Animations --- */
+
+.mystory-image.fade-in-left,
+.mystory-content.fade-in-right {
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* --- Responsive: Tablet --- */
+
+@media (max-width: 900px) {
+  .mystory-section {
+    padding: 4rem 0;
+  }
+
+  .mystory-grid {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .mystory-image {
+    flex: none;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .mystory-content {
+    flex: none;
+    width: 100%;
+  }
+
+  .mystory-heading {
+    font-size: 2rem;
+  }
+}
+
+/* --- Responsive: Mobile --- */
+
+@media (max-width: 480px) {
+  .mystory-section {
+    padding: 3rem 0;
+  }
+
+  .mystory-grid {
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .mystory-heading {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .mystory-paragraph {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .rainbow-bar {
+    margin-top: 2rem;
+  }
+}

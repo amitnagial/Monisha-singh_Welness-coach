@@ -1,0 +1,184 @@
+/* ===================================
+   Community Section
+   =================================== */
+
+.community-section {
+  background: var(--pink-light, #FFF0F5);
+  padding: 5rem 0;
+}
+
+/* --- Grid Layout --- */
+
+.community-grid {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.community-content {
+  flex: 1.2;
+}
+
+.community-image {
+  flex: 1;
+}
+
+/* --- Heading --- */
+
+.community-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--heading-color, #000000);
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+/* --- Description --- */
+
+.community-description {
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: #555555;
+  margin: 0 0 0.5rem 0;
+}
+
+/* --- Buttons Container --- */
+
+.community-buttons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* --- Shared Button Styles --- */
+
+.community-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  border-radius: var(--radius-sm, 8px);
+  font-weight: 500;
+  font-size: 1rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+}
+
+.community-btn-icon {
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+/* --- WhatsApp Button --- */
+
+.btn-whatsapp {
+  background: #25D366;
+}
+
+.btn-whatsapp:hover {
+  background: #1ebe57;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+}
+
+/* --- Instagram Button --- */
+
+.btn-instagram {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.btn-instagram:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 39, 67, 0.35);
+  filter: brightness(1.08);
+}
+
+/* --- Image --- */
+
+.community-image img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md, 12px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+}
+
+/* --- Scroll Animation --- */
+
+.community-section .fade-in-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.community-section .fade-in-element.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 900px) {
+  .community-grid {
+    flex-direction: column;
+  }
+
+  .community-content {
+    flex: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .community-image {
+    flex: none;
+    width: 100%;
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .community-heading {
+    font-size: 2rem;
+  }
+
+  .community-buttons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .community-section {
+    padding: 3rem 0;
+  }
+
+  .community-grid {
+    padding: 0 1rem;
+    gap: 2rem;
+  }
+
+  .community-heading {
+    font-size: 1.75rem;
+  }
+
+  .community-description {
+    font-size: 0.95rem;
+  }
+
+  .community-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .community-btn {
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}

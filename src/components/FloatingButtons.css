@@ -1,0 +1,151 @@
+/* ============================================
+   FLOATING BUTTONS - Fixed Position Elements
+   ============================================ */
+
+/* ---- WhatsApp Button ---- */
+
+.floating-whatsapp {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 56px;
+  height: 56px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 28px;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.4);
+  z-index: 998;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: whatsapp-pulse 2s infinite;
+}
+
+.floating-whatsapp:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.5);
+  animation: none;
+}
+
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* ---- Book A Session Button ---- */
+
+.floating-book-btn {
+  position: fixed;
+  bottom: 6rem;
+  right: 1.5rem;
+  background: #CA0058;
+  color: #ffffff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  z-index: 998;
+  cursor: pointer;
+  border: none;
+  font-family: 'Kanit', sans-serif;
+  white-space: nowrap;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.floating-book-btn:hover {
+  background: #a80049;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(202, 0, 88, 0.3);
+}
+
+.floating-book-btn:active {
+  transform: translateY(0);
+}
+
+/* ---- View Services Side Tab ---- */
+
+.view-services-tab {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #CA0058;
+  color: #ffffff;
+  writing-mode: vertical-rl;
+  padding: 1rem 0.5rem;
+  border-radius: 8px 0 0 8px;
+  font-weight: 500;
+  font-size: 0.85rem;
+  z-index: 998;
+  cursor: pointer;
+  letter-spacing: 1px;
+  border: none;
+  font-family: 'Kanit', sans-serif;
+  transition: padding-right 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: -2px 0 10px rgba(202, 0, 88, 0.25);
+}
+
+.view-services-tab:hover {
+  padding-right: 0.75rem;
+  background: #a80049;
+  box-shadow: -4px 0 16px rgba(202, 0, 88, 0.35);
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+  .floating-whatsapp {
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    bottom: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .floating-book-btn {
+    bottom: 5.25rem;
+    right: 1rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .view-services-tab {
+    font-size: 0.75rem;
+    padding: 0.75rem 0.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .floating-whatsapp {
+    width: 48px;
+    height: 48px;
+    font-size: 22px;
+    bottom: 1.25rem;
+    right: 1.25rem;
+  }
+
+  .floating-book-btn {
+    bottom: 4.75rem;
+    right: 0.75rem;
+    padding: 0.5rem 0.85rem;
+    font-size: 0.75rem;
+  }
+
+  .view-services-tab {
+    display: none;
+  }
+}

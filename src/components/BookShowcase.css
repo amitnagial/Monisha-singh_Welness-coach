@@ -1,0 +1,229 @@
+/* ===================================
+   Book Showcase Section
+   =================================== */
+
+.book-section {
+  background: #ffffff;
+  padding: 5rem 0;
+}
+
+/* --- Container --- */
+
+.book-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+/* --- Card --- */
+
+.book-card {
+  background: var(--pink-bg, #FFF5F8);
+  border-radius: var(--radius-lg, 20px);
+  padding: 3rem;
+  box-shadow: 0 4px 24px rgba(202, 0, 88, 0.08);
+}
+
+/* --- Section Heading --- */
+
+.book-section-heading {
+  font-size: 2.75rem;
+  font-weight: 600;
+  font-style: italic;
+  color: var(--primary-color, #CA0058);
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+/* --- Book Cover with 3D Tilt --- */
+
+.book-cover {
+  max-width: 350px;
+  margin: 0 auto 2rem;
+  perspective: 600px;
+}
+
+.book-cover img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-sm, 8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  transform-style: preserve-3d;
+}
+
+.book-cover img:hover {
+  transform: perspective(600px) rotateY(-5deg) rotateX(2deg);
+  box-shadow: 0 16px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Book Title --- */
+
+.book-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--heading-color, #000000);
+  margin: 0 0 1rem 0;
+  line-height: 1.3;
+}
+
+/* --- Book Description --- */
+
+.book-description {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #666666;
+  margin: 0 0 2rem 0;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Purchase Buttons --- */
+
+.book-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* --- Shared Button Styles --- */
+
+.book-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm, 8px);
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  border: none;
+  white-space: nowrap;
+}
+
+.book-btn-icon {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* --- Amazon Button --- */
+
+.btn-amazon {
+  background: #FF9900;
+}
+
+.btn-amazon:hover {
+  background: #e68a00;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 153, 0, 0.35);
+}
+
+/* --- Google Books Button --- */
+
+.btn-google {
+  background: #4285F4;
+}
+
+.btn-google:hover {
+  background: #3574d4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(66, 133, 244, 0.35);
+}
+
+/* --- Explore More Button (Outline) --- */
+
+.btn-explore {
+  background: transparent;
+  color: var(--primary-color, #CA0058);
+  border: 2px solid var(--primary-color, #CA0058);
+}
+
+.btn-explore:hover {
+  background: var(--primary-color, #CA0058);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(202, 0, 88, 0.3);
+}
+
+/* --- Scroll Animation --- */
+
+.book-section .fade-in-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.book-section .fade-in-element.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive --- */
+
+@media (max-width: 768px) {
+  .book-card {
+    padding: 2rem 1.5rem;
+  }
+
+  .book-section-heading {
+    font-size: 2.25rem;
+  }
+
+  .book-cover {
+    max-width: 280px;
+  }
+
+  .book-title {
+    font-size: 1.3rem;
+  }
+
+  .book-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .book-section {
+    padding: 3rem 0;
+  }
+
+  .book-container {
+    padding: 0 1rem;
+  }
+
+  .book-card {
+    padding: 1.75rem 1.25rem;
+    border-radius: var(--radius-md, 12px);
+  }
+
+  .book-section-heading {
+    font-size: 1.875rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .book-cover {
+    max-width: 240px;
+    margin-bottom: 1.5rem;
+  }
+
+  .book-title {
+    font-size: 1.2rem;
+  }
+
+  .book-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .book-btn {
+    justify-content: center;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.9rem;
+  }
+}

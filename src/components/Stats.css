@@ -1,0 +1,185 @@
+/* ===================================
+   Stats / Wellness Coaching Section
+   =================================== */
+
+.stats-section {
+  background: #FDE8EF;
+  padding: 5rem 0;
+}
+
+.stats-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- Top Row: Content + Image --- */
+
+.stats-top {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  margin-bottom: 3rem;
+}
+
+/* --- Left Content --- */
+
+.stats-content {
+  flex: 1;
+}
+
+.stats-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+/* --- Bullet List --- */
+
+.stats-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.stats-bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1.05rem;
+  line-height: 2.2;
+  color: #444444;
+}
+
+.stats-bullet-dot {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  background: #CA0058;
+  border-radius: 50%;
+}
+
+/* --- Right Image --- */
+
+.stats-image {
+  flex: 1;
+}
+
+.stats-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+}
+
+/* --- Stats Counter Grid --- */
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  text-align: center;
+}
+
+.stat-item {
+  padding: 1.5rem;
+}
+
+.stat-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #CA0058;
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: #666666;
+  line-height: 1.4;
+}
+
+/* --- Scroll Animation --- */
+
+.stats-top.fade-in,
+.stats-grid.fade-in {
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+/* --- Responsive: Tablet --- */
+
+@media (max-width: 900px) {
+  .stats-section {
+    padding: 4rem 0;
+  }
+
+  .stats-top {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .stats-content {
+    flex: none;
+    width: 100%;
+  }
+
+  .stats-image {
+    flex: none;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .stats-heading {
+    font-size: 2rem;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* --- Responsive: Mobile --- */
+
+@media (max-width: 480px) {
+  .stats-section {
+    padding: 3rem 0;
+  }
+
+  .stats-container {
+    padding: 0 1rem;
+  }
+
+  .stats-heading {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .stats-bullet-item {
+    font-size: 0.95rem;
+    line-height: 2;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .stat-item {
+    padding: 1rem;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+  }
+}

@@ -1,0 +1,491 @@
+/* ============================================
+   HEADER - Sticky Navigation Bar
+   ============================================ */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header.scrolled {
+  background: #ffffff;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+}
+
+.header-container {
+  max-width: var(--max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 75px;
+}
+
+/* ---- Logo ---- */
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  flex-shrink: 0;
+}
+
+/* Colorful Lotus in Header */
+.header-lotus-container {
+  position: relative;
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+}
+
+.header-lotus-petal {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  opacity: 0.5;
+  filter: blur(0.5px);
+  mix-blend-mode: multiply;
+}
+
+/* Top */
+.header-lotus-petal-red {
+  background: #FF1744;
+  top: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Top-right */
+.header-lotus-petal-orange {
+  background: #FF9100;
+  top: 8px;
+  right: 4px;
+}
+
+/* Bottom-right */
+.header-lotus-petal-green {
+  background: #00E676;
+  bottom: 8px;
+  right: 4px;
+}
+
+/* Bottom */
+.header-lotus-petal-blue {
+  background: #2979FF;
+  bottom: 3px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Bottom-left */
+.header-lotus-petal-purple {
+  background: #AA00FF;
+  bottom: 8px;
+  left: 4px;
+}
+
+/* Top-left */
+.header-lotus-petal-yellow {
+  background: #FFEA00;
+  top: 8px;
+  left: 4px;
+}
+
+/* Center-accent */
+.header-lotus-petal-pink {
+  background: #E91E63;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  opacity: 0.4;
+}
+
+.header-lotus-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.header-lotus-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.header-logo-text {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--heading-color, #000000);
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.header-logo:hover .header-logo-text {
+  color: var(--primary-color, #CA0058);
+}
+
+/* ---- Desktop Navigation ---- */
+
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav-list {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.header-nav-link {
+  display: inline-block;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.925rem;
+  font-weight: 500;
+  color: var(--body-text, #282828);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.header-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--primary-color, #CA0058);
+  border-radius: 1px;
+  transition: width 0.3s ease;
+}
+
+.header-nav-link:hover {
+  color: var(--primary-color, #CA0058);
+}
+
+.header-nav-link:hover::after {
+  width: 60%;
+}
+
+.header-nav-link.active {
+  color: var(--primary-color, #CA0058);
+}
+
+.header-nav-link.active::after {
+  width: 60%;
+}
+
+/* ---- Actions (Social + Mobile Toggle) ---- */
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+.header-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  color: #ffffff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.header-social-link:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.header-mobile-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: none;
+  font-size: 1.35rem;
+  color: var(--body-text, #282828);
+  cursor: pointer;
+  border-radius: var(--radius-sm, 8px);
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.header-mobile-toggle:hover {
+  color: var(--primary-color, #CA0058);
+  background: var(--primary-light, rgba(202, 0, 88, 0.1));
+}
+
+/* ---- Mobile Overlay ---- */
+
+.mobile-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.mobile-overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ---- Mobile Menu (Slide from Right) ---- */
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  max-width: 85vw;
+  height: 100vh;
+  background: #ffffff;
+  z-index: 1002;
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: -4px 0 24px rgba(0, 0, 0, 0.12);
+  overflow-y: auto;
+}
+
+.mobile-menu.open {
+  transform: translateX(0);
+}
+
+.mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid var(--border-color, #cccccc);
+}
+
+.mobile-menu-header .header-logo-text {
+  font-size: 1.25rem;
+}
+
+.mobile-menu-close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border: none;
+  background: none;
+  font-size: 1.25rem;
+  color: var(--body-text, #282828);
+  cursor: pointer;
+  border-radius: var(--radius-sm, 8px);
+  transition: color 0.3s ease, background 0.3s ease;
+}
+
+.mobile-menu-close:hover {
+  color: var(--primary-color, #CA0058);
+  background: var(--primary-light, rgba(202, 0, 88, 0.1));
+}
+
+.mobile-menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 1rem 0;
+  flex: 1;
+}
+
+.mobile-menu-link {
+  display: block;
+  padding: 0.875rem 1.5rem;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--body-text, #282828);
+  text-decoration: none;
+  transition: color 0.3s ease, background 0.3s ease, padding-left 0.3s ease;
+  border-left: 3px solid transparent;
+}
+
+.mobile-menu-link:hover {
+  color: var(--primary-color, #CA0058);
+  background: var(--primary-light, rgba(202, 0, 88, 0.1));
+  padding-left: 2rem;
+}
+
+.mobile-menu-link.active {
+  color: var(--primary-color, #CA0058);
+  border-left-color: var(--primary-color, #CA0058);
+  background: var(--primary-light, rgba(202, 0, 88, 0.1));
+}
+
+.mobile-menu-social {
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--border-color, #cccccc);
+}
+
+.mobile-social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.mobile-social-link svg {
+  font-size: 1.5rem;
+}
+
+.mobile-social-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================================
+   VIEW SERVICES TAB - Fixed Right Edge
+   ============================================ */
+
+.view-services-tab {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: rotate(-90deg) translateX(50%);
+  transform-origin: right center;
+  background: var(--primary-color, #CA0058);
+  color: #ffffff;
+  padding: 0.6rem 1.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  z-index: 999;
+  border-radius: 6px 6px 0 0;
+  transition: background 0.3s ease, padding 0.3s ease;
+  white-space: nowrap;
+  box-shadow: 0 -2px 10px rgba(202, 0, 88, 0.25);
+}
+
+.view-services-tab:hover {
+  background: var(--primary-hover, #a80049);
+  padding: 0.75rem 1.6rem;
+}
+
+/* ============================================
+   RESPONSIVE - Tablet & Mobile
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .header-nav-list {
+    gap: 0;
+  }
+
+  .header-nav-link {
+    padding: 0.5rem 0.6rem;
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-container {
+    padding: 0 1.25rem;
+    height: 65px;
+  }
+
+  .header-nav {
+    display: none;
+  }
+
+  .header-mobile-toggle {
+    display: flex;
+  }
+
+  .header-lotus-container {
+    width: 36px;
+    height: 36px;
+  }
+
+  .header-lotus-petal {
+    width: 14px;
+    height: 14px;
+  }
+
+  .header-lotus-petal-pink {
+    width: 12px;
+    height: 12px;
+  }
+
+  .header-lotus-center {
+    width: 12px;
+    height: 12px;
+  }
+
+  .header-lotus-icon {
+    width: 10px;
+    height: 10px;
+  }
+
+  .header-logo-text {
+    font-size: 1.2rem;
+  }
+
+  .view-services-tab {
+    font-size: 0.75rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 1rem;
+    height: 60px;
+  }
+
+  .mobile-menu {
+    width: 280px;
+  }
+
+  .view-services-tab {
+    display: none;
+  }
+}

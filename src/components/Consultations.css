@@ -1,0 +1,235 @@
+/* ===================================
+   Consultations Section
+   =================================== */
+
+.consultations-section {
+  background: #ffffff;
+  padding: 5rem 0;
+}
+
+.consultations-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- Heading --- */
+
+.consultations-heading {
+  font-size: 2.75rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #CA0058;
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+/* --- Cards Grid --- */
+
+.consultations-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* --- Card --- */
+
+.consultations-card {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.consultations-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+}
+
+/* --- Card Image Area --- */
+
+.consultations-card-image {
+  height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.consultations-card-image-label {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  letter-spacing: 0.02em;
+}
+
+/* --- Card Body --- */
+
+.consultations-card-body {
+  padding: 1.75rem 1.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.consultations-card-title {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 1rem;
+}
+
+/* --- Card Bullets --- */
+
+.consultations-card-bullets {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.consultations-card-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 0.7rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: #555555;
+}
+
+.consultations-card-bullet:last-child {
+  margin-bottom: 0;
+}
+
+.consultations-bullet-dot {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  background: #CA0058;
+  border-radius: 50%;
+  margin-top: 7px;
+}
+
+/* --- Scroll Animation --- */
+
+.consultations-grid.fade-in-element {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.consultations-grid.fade-in-element.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.consultations-grid.fade-in-element .stagger-1 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out 0.1s, transform 0.5s ease-out 0.1s;
+}
+
+.consultations-grid.fade-in-element .stagger-2 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out 0.2s, transform 0.5s ease-out 0.2s;
+}
+
+.consultations-grid.fade-in-element .stagger-3 {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.5s ease-out 0.3s, transform 0.5s ease-out 0.3s;
+}
+
+.consultations-grid.fade-in-element.is-visible .stagger-1,
+.consultations-grid.fade-in-element.is-visible .stagger-2,
+.consultations-grid.fade-in-element.is-visible .stagger-3 {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Responsive: Tablet --- */
+
+@media (max-width: 1024px) {
+  .consultations-heading {
+    font-size: 2.25rem;
+  }
+
+  .consultations-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  .consultations-card-image {
+    height: 190px;
+  }
+}
+
+/* --- Responsive: Mobile --- */
+
+@media (max-width: 768px) {
+  .consultations-section {
+    padding: 3rem 0;
+  }
+
+  .consultations-container {
+    padding: 0 1.25rem;
+  }
+
+  .consultations-heading {
+    font-size: 1.875rem;
+    margin-bottom: 2rem;
+  }
+
+  .consultations-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .consultations-card-image {
+    height: 180px;
+  }
+
+  .consultations-card-body {
+    padding: 1.5rem 1.25rem 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .consultations-section {
+    padding: 2.5rem 0;
+  }
+
+  .consultations-container {
+    padding: 0 1rem;
+  }
+
+  .consultations-heading {
+    font-size: 1.625rem;
+  }
+
+  .consultations-card-image {
+    height: 160px;
+  }
+
+  .consultations-card-image-label {
+    font-size: 1.25rem;
+  }
+
+  .consultations-card-title {
+    font-size: 1.2rem;
+  }
+
+  .consultations-card-bullet {
+    font-size: 0.9rem;
+  }
+}
